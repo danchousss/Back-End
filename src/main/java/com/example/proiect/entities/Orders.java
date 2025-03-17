@@ -17,7 +17,7 @@ public class Orders {
     @GeneratedValue
     private Long id;
     private Long price;
-
+//связь
     @ManyToOne
     @JoinColumn(name = "id",insertable=false, updatable=false)
     private Phones phones;
