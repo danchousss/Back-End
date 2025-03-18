@@ -19,6 +19,8 @@ public class Customer {
     @GeneratedValue
     private Long id;
     private String name;
+    private String address;
+    private String phone;
 
     @OneToMany(mappedBy = "customer")
     private List<Orders> orders;

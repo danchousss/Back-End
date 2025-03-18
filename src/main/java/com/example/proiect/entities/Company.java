@@ -1,9 +1,6 @@
 package com.example.proiect.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,13 +15,9 @@ import java.util.List;
 @NoArgsConstructor
 public class Company {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String country;
-
-    @OneToMany
-    private List<Phones> name;
-
     @OneToMany(mappedBy = "company")
     private List<Phones>phones;
 }
