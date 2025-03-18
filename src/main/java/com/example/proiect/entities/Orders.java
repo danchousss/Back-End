@@ -19,11 +19,11 @@ public class Orders {
     private Long price;
 
     @ManyToOne
-    @JoinColumn(name = "id",insertable=false, updatable=false)
+    @JoinColumn(name = "phones_id",insertable=false, updatable=false)
     private Phones phones;
 
     @ManyToOne
-    @JoinColumn(name = "id",insertable=false, updatable=false)
+    @JoinColumn(name = "customer_id",insertable=false, updatable=false)
     private Customer customer;
 
 }

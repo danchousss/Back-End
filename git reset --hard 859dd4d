@@ -1,0 +1,8 @@
+[33m372cdb3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m859dd4d[m HEAD@{1}: reset: moving to HEAD~1
+[33m9e9c816[m[33m ([m[1;31morigin/dev[m[33m)[m HEAD@{2}: commit: adding entities
+[33m859dd4d[m HEAD@{3}: commit: setting up a h2-console and adding entities
+[33m372cdb3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{4}: checkout: moving from имя_ветки to dev
+[33m372cdb3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{5}: checkout: moving from main to имя_ветки
+[33m372cdb3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{6}: Branch: renamed refs/heads/master to refs/heads/main
+[33m372cdb3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{8}: commit (initial): adding packages
