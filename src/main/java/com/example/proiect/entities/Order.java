@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table
-public class Orders {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +21,7 @@ public class Orders {
 
     @ManyToOne
     @JoinColumn(name = "phones_id",referencedColumnName = "id")
-    private Phones phones;
+    private Phone phones;
 
     @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "id")

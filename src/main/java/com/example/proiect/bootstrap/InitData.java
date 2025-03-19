@@ -2,7 +2,7 @@ package com.example.proiect.bootstrap;
 
 import com.example.proiect.entities.Company;
 import com.example.proiect.entities.Customer;
-import com.example.proiect.entities.Phones;
+import com.example.proiect.entities.Phone;
 import com.example.proiect.repositories.CompanyRepository;
 import com.example.proiect.repositories.CustomRepository;
 import com.example.proiect.repositories.OrderRepository;
@@ -28,13 +28,18 @@ public class InitData {
     public void init() {
 
         log.warn("Init data");
+        Company company3 = Company.builder()
+                .companyName("Daniel")
+                .country("Nigeria")
+                .build();
+        companyRepository.save(company3);
         Company company = Company.builder()
                 .companyName("Daniel")
                 .country("Nigeria")
                 .build();
         companyRepository.save(company);
 
-        Phones iphone = Phones.builder()
+        Phone iphone = Phone.builder()
                 .model("iphone")
                 .company(company)
                 .price(123L)
@@ -42,13 +47,21 @@ public class InitData {
                 .build();
         phonesRepository.save(iphone);
 
-        Phones samsung = Phones.builder()
+        Phone samsung = Phone.builder()
                 .model("samsung")
                 .company(company)
                 .price(456L)
                 .yearOfRelease(1929L)
                 .build();
         phonesRepository.save(samsung);
+
+        Phone nokia = Phone.builder()
+                .model("nokkia")
+                .company(company3)
+                .price(46L)
+                .yearOfRelease(192L)
+                .build();
+        phonesRepository.save(nokia);
 
         Customer custom=Customer.builder()
                 .name("Gustavo")

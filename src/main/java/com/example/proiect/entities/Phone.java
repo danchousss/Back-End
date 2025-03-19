@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table
-public class Phones {
+public class Phone {
 
 
     @Id
@@ -27,7 +27,7 @@ public class Phones {
     private Long price;
 
     @OneToMany(mappedBy = "phones" )
-    private List<Orders> orders;
+    private List<Order> orders;
 
     @ManyToOne
     @JoinColumn(name = "company_id",referencedColumnName = "id")
