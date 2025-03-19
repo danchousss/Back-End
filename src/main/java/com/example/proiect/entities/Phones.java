@@ -14,11 +14,12 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table
 public class Phones {
 
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String model;
@@ -29,6 +30,6 @@ public class Phones {
     private List<Orders> orders;
 
     @ManyToOne
-    @JoinColumn(name = "company_id",insertable=false, updatable=false)
+    @JoinColumn(name = "company_id",referencedColumnName = "id")
     private Company company;
 }
