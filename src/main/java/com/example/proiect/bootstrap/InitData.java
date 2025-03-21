@@ -2,6 +2,7 @@ package com.example.proiect.bootstrap;
 
 import com.example.proiect.entities.Company;
 import com.example.proiect.entities.Customer;
+import com.example.proiect.entities.Order;
 import com.example.proiect.entities.Phone;
 import com.example.proiect.repositories.CompanyRepository;
 import com.example.proiect.repositories.CustomRepository;
@@ -39,6 +40,8 @@ public class InitData {
                 .build();
         companyRepository.save(company);
 
+        System.out.println(company.getId());
+
         Phone iphone = Phone.builder()
                 .model("iphone")
                 .company(company)
@@ -69,6 +72,11 @@ public class InitData {
                 .build();
         customRepository.save(custom);
 
-
+        Order order = Order.builder()
+                .price(123L)
+                .phones(nokia)
+                .customer(custom)
+                .build();
     }
+
 }

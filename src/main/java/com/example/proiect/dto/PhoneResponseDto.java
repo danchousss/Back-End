@@ -6,10 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @Builder
 @AllArgsConstructor
-public class CustomerDto {
-    private String name;
-    private String phone;
+@NoArgsConstructor
+public class PhoneResponseDto {
+    private int price;
+    private String model;
+    private Long yearOfRelease;
 }

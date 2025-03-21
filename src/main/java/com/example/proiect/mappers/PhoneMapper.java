@@ -1,6 +1,6 @@
 package com.example.proiect.mappers;
 
-import com.example.proiect.dto.PhoneDto;
+import com.example.proiect.dto.PhoneRequestDto;
 import com.example.proiect.entities.Phone;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -11,9 +11,9 @@ import java.util.List;
 public interface PhoneMapper {
     PhoneMapper INSTANCE = Mappers.getMapper(PhoneMapper.class);
 
-    Phone toPhone(PhoneDto phoneDto);
+    Phone toPhone(PhoneRequestDto phoneDto);
 
-    PhoneDto toPhoneDto(Phone phone);
+    PhoneRequestDto toPhoneDto(Phone phone);
 
-    List<PhoneDto> toPhoneDtoList(List<Phone> phones);
+    List<PhoneRequestDto> toPhoneDtoList(List<Phone> phones);
 }

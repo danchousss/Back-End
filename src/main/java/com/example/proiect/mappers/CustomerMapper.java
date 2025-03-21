@@ -1,20 +1,22 @@
 package com.example.proiect.mappers;
 
-import com.example.proiect.dto.CustomerDto;
+import com.example.proiect.dto.CustomerRequestDto;
 import com.example.proiect.entities.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Mapper
+@Component
+@Mapper(componentModel = "spring")
 public interface CustomerMapper {
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
 
-    Customer toCustomer(CustomerDto customerDto);
+    Customer toCustomer(CustomerRequestDto customerDto);
 
-    CustomerDto toCustomerDto(Customer customer);
-    List<CustomerDto> toCustomerDtoList(List<Customer> customers);
+    CustomerRequestDto toCustomerDto(Customer customer);
+    List<CustomerRequestDto> toCustomerDtoList(List<Customer> customers);
 
 
 

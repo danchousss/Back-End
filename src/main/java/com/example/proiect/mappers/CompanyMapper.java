@@ -1,18 +1,17 @@
 package com.example.proiect.mappers;
 
-import com.example.proiect.dto.CompanyDto;
+import com.example.proiect.dto.CompanyRequestDto;
 import com.example.proiect.entities.Company;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
-@Mapper
+
+@Mapper(componentModel = "spring")
 public interface CompanyMapper {
-    CompanyMapper INSTANCE = Mappers.getMapper(CompanyMapper.class);
 
-    Company toCompany(CompanyDto companyDto);
+    Company toCompany(CompanyRequestDto companyDto);
 
-    CompanyDto toCompanyDto(Company company);
+    CompanyRequestDto toCompanyDto(Company company);
 
-    List<CompanyDto> toCompanyDtoList(List<Company> companies);
+    List<CompanyRequestDto> toCompanyDtoList(List<Company> companies);
 }

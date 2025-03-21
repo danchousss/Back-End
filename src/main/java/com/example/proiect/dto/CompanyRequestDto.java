@@ -1,5 +1,6 @@
 package com.example.proiect.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-public class PhoneDto {
-    private String phone;
-    private int price;
-    private String model;
+public class CompanyRequestDto {
+    private int id;
     private String companyName;
+    private String country;
 
 }
