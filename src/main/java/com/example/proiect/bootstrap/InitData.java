@@ -5,9 +5,9 @@ import com.example.proiect.entities.Customer;
 import com.example.proiect.entities.Order;
 import com.example.proiect.entities.Phone;
 import com.example.proiect.repositories.CompanyRepository;
-import com.example.proiect.repositories.CustomRepository;
+import com.example.proiect.repositories.CustomerRepository;
 import com.example.proiect.repositories.OrderRepository;
-import com.example.proiect.repositories.PhonesRepository;
+import com.example.proiect.repositories.PhoneRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,10 +18,10 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class InitData {
 
-    private final CustomRepository customRepository;
+    private final CustomerRepository customRepository;
     private String myProperty;
 
-    private final PhonesRepository phonesRepository;
+    private final PhoneRepository phonesRepository;
     private final CompanyRepository companyRepository;
     private final OrderRepository orderRepository;
 

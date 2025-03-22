@@ -1,5 +1,6 @@
 package com.example.proiect.dto;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PhoneRequestDto {
-    private int id;
-    private int price;
+    @NotEmpty(message = "model must not be null")
     private String model;
-    private Long company_id;
+    @NotEmpty(message = "price must not be null")
+    private Long price;
+    @NotEmpty(message = "yearOfRelease must not be null")
     private Long yearOfRelease;
+    private Long company_id;
 }

@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PhoneResponseDto {
-    private int price;
+    private int id;
+    private Long price;
     private String model;
+    private Long company_id;
     private Long yearOfRelease;
 }

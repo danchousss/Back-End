@@ -1,7 +1,7 @@
-package com.example.proiect.exception;
-
-public class NotFoundException extends RuntimeException {
-    public NotFoundException(String message) {
-        super(message);
-    }
-}
+//package com.example.proiect.exception;
+//
+//public class NotFoundException extends RuntimeException {
+//    public NotFoundException(String message) {
+//        super(message);
+//    }
+//}

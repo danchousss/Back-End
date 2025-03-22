@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderResponseDto {
-    private int price;
+    private long id;
+    private long price;
     private long phone_id;
-    private long company_id;
+    private long customer_id;
 }

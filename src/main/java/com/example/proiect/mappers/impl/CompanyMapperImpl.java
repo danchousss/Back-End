@@ -1,6 +1,7 @@
 package com.example.proiect.mappers.impl;
 
 import com.example.proiect.dto.CompanyRequestDto;
+import com.example.proiect.dto.CompanyResponseDto;
 import com.example.proiect.entities.Company;
 import com.example.proiect.mappers.CompanyMapper;
 
@@ -15,16 +16,20 @@ public class CompanyMapperImpl implements CompanyMapper {
         Company company = new Company();
         company.setCompanyName(companyDto.getCompanyName());
         company.setCountry(companyDto.getCountry());
-        return null;
+        return company;
     }
 
     @Override
-    public CompanyRequestDto toCompanyDto(Company company) {
-        return null;
+    public CompanyResponseDto toCompanyDto(Company company) {
+        CompanyResponseDto companyDto = new CompanyResponseDto();
+        companyDto.setCompanyName(company.getCompanyName());
+        companyDto.setCountry(company.getCountry());
+        return companyDto;
     }
 
     @Override
-    public List<CompanyRequestDto> toCompanyDtoList(List<Company> companies) {
+    public List<CompanyRequestDto> toResponseList(List<Company> companies) {
+
         return List.of();
     }
 }

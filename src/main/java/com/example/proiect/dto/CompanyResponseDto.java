@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CompanyResponseDto {
+    private Long id;
     private String companyName;
     private String country;
 }

@@ -1,6 +1,7 @@
 package com.example.proiect.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -19,7 +20,8 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "name must not be null")
+    @NotBlank
     private String companyName;
+    @NotNull
     private String country;
 }

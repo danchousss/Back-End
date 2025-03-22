@@ -1,21 +1,30 @@
 package com.example.proiect.services.impl;
 
+import com.example.proiect.dto.CompanyRequestDto;
+import com.example.proiect.dto.CompanyResponseDto;
 import com.example.proiect.entities.Company;
 import com.example.proiect.mappers.CompanyMapper;
 import com.example.proiect.repositories.CompanyRepository;
 import com.example.proiect.services.CompanyService;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
 public class CompanyServiceImpl implements CompanyService {
+    private final CompanyMapper companyMapper;
     private CompanyRepository companyRepository;
-//    private CompanyMapper companyMapper;
 
+
+    @Autowired
+    public CompanyServiceImpl(CompanyMapper companyMapper,CompanyRepository companyRepository
+    ) {
+        this.companyRepository = companyRepository;
+        this.companyMapper = companyMapper;
+    }
 
 
     @Override
@@ -25,14 +34,24 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public List<Company> getAllCompanies() {
-        return List.of();
+    public List<CompanyResponseDto> getAllCompanies() {
+
+        List<Company> companies = companyRepository.findAll();
+        return companyRepository.findAll().stream()
+                .map(companyMapper::toCompanyDto)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Company createCompany(Company company) {
-        return null;
+    public String createCompany(CompanyRequestDto company) {
+        Company savedCompany =companyMapper.toCompany(company);
+        if (savedCompany == null) {
+            throw new IllegalArgumentException("Company entity is null after mapping!");
+        }
+        companyRepository.save(savedCompany);
+        return "Company has been saved";
     }
+
 
     @Override
     public Company updateCompany(Company company) {
