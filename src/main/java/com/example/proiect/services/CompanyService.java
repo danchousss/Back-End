@@ -10,8 +10,6 @@ public interface CompanyService {
     Company getCompanyById(Long id);
     List<CompanyResponseDto> getAllCompanies();
     String createCompany(CompanyRequestDto company);
-    Company updateCompany(Company company);
+    void updateCompany(Long id, CompanyRequestDto company);
     void deleteCompany(Long id);
-
-
 }

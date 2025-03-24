@@ -22,6 +22,7 @@ public class CompanyMapperImpl implements CompanyMapper {
     @Override
     public CompanyResponseDto toCompanyDto(Company company) {
         CompanyResponseDto companyDto = new CompanyResponseDto();
+        companyDto.setId(company.getId());
         companyDto.setCompanyName(company.getCompanyName());
         companyDto.setCountry(company.getCountry());
         return companyDto;

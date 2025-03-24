@@ -1,6 +1,7 @@
 package com.example.proiect.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,10 +27,11 @@ public class Phone {
     private Long yearOfRelease;
     private Long price;
 
-    @OneToMany(mappedBy = "phones" )
+    @OneToMany(mappedBy = "phones", cascade = CascadeType.ALL, orphanRemoval = true )
     private List<Order> orders;
 
     @ManyToOne
     @JoinColumn(name = "company_id",referencedColumnName = "id")
+    @JsonBackReference
     private Company company;
 }

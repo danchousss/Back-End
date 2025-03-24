@@ -41,5 +41,14 @@ public class CompanyController {
     public String createCompany(@RequestBody CompanyRequestDto companyRequestDto) {
         return companyService.createCompany(companyRequestDto);
     }
-
+    @PutMapping("/{id}")
+    public String updateCompany(@PathVariable ("id") Long id,@Valid @RequestBody CompanyRequestDto companyRequestDto) {
+        companyService.updateCompany(id, companyRequestDto);
+        return "Company updated successfully";
+    }
+    @DeleteMapping("/{id}")
+    public String deleteCompanyBy(@PathVariable ("id") Long id){
+         companyService.deleteCompany(id);
+        return "Company successfully deleted";
+    }
 }

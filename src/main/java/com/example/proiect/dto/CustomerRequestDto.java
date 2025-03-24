@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerRequestDto {
+
     @NotBlank(message = "title must not be blank")
     private String name;
     @NotEmpty (message = "address must not be null")

@@ -6,9 +6,10 @@ import com.example.proiect.dto.OrderResponseDto;
 import com.example.proiect.entities.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
 

@@ -35,10 +35,16 @@ public class InitData {
                 .build();
         companyRepository.save(company3);
         Company company = Company.builder()
-                .companyName("Daniel")
-                .country("Nigeria")
+                .companyName("Sony")
+                .country("Japan")
                 .build();
         companyRepository.save(company);
+        Company company1 = Company.builder()
+                .companyName("Honor")
+                .country("Usa")
+                .build();
+        companyRepository.save(company1);
+
 
         System.out.println(company.getId());
 
@@ -69,8 +75,30 @@ public class InitData {
         Customer custom=Customer.builder()
                 .name("Gustavo")
                 .phone("+996500777777")
+                .address("Mexico")
                 .build();
         customRepository.save(custom);
+
+        Customer custom1=Customer.builder()
+                .name("Alex")
+                .phone("+99650077777")
+                .address("USA")
+                .build();
+        customRepository.save(custom1);
+
+        Customer custom2=Customer.builder()
+                .name("Zabit")
+                .phone("+99650077777")
+                .address("Dagestan")
+                .build();
+        customRepository.save(custom2);
+
+        Customer custom3=Customer.builder()
+                .name("Sergei")
+                .phone("+99650077777")
+                .address("Dagestan")
+                .build();
+        customRepository.save(custom3);
 
         Order order = Order.builder()
                 .price(123L)

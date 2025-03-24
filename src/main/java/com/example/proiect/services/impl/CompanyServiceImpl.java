@@ -54,12 +54,22 @@ public class CompanyServiceImpl implements CompanyService {
 
 
     @Override
-    public Company updateCompany(Company company) {
-        return null;
+    public void updateCompany(Long id, CompanyRequestDto company) {
+        Company companyToUpdate = companyRepository.findById(id)
+        .orElseThrow(() -> new EntityNotFoundException("Company not found with id " + id));
+        if (company.getCompanyName() != null && !company.getCompanyName().isBlank()) {
+            companyToUpdate.setCompanyName(company.getCompanyName());
+        }
+        companyToUpdate.setCompanyName(company.getCompanyName());
+        companyToUpdate.setCountry(company.getCountry());
+        companyRepository.save(companyToUpdate);
     }
 
     @Override
     public void deleteCompany(Long id) {
+        companyRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Company not found with id " + id));
+        companyRepository.deleteById(id);
 
     }
 }
