@@ -2,14 +2,12 @@ package com.example.proiect.repository;
 
 
 import com.example.proiect.entities.Company;
-import com.example.proiect.entities.Phones;
 import com.example.proiect.repositories.CompanyRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import java.util.List;
 import java.util.Optional;
 
 @DataJpaTest
@@ -21,6 +19,7 @@ public class CompanyRepositoryTest {
     @Test
     public void testFindById() {
         Company company = Company.builder()
+                .companyName("Altyn")
                 .country("Abhazia")
                 .build();
 
@@ -30,6 +29,6 @@ public class CompanyRepositoryTest {
         Optional<Company> foundCompany = companyRepository.findById(savedCompany.getId());
 
         Assertions.assertTrue(foundCompany.isPresent());
-        Assertions.assertEquals(1L, foundCompany.get().getId());
+        Assertions.assertEquals(1, foundCompany.get().getId());
     }
 }
