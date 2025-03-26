@@ -25,9 +25,6 @@ public class CompanyController {
     public CompanyController(CompanyService companyService) {
         this.companyService = companyService;
     }
-
-
-
     @GetMapping("/{id}")
     public ResponseEntity<Company> getCompanyById(@PathVariable ("id") Long id) {
         return  ResponseEntity.ok().body(companyService.getCompanyById(id));

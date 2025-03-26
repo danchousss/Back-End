@@ -60,8 +60,8 @@ public class PhoneServiceImpl implements PhoneService {
         Phone phoneToUpdate = phoneRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Phone not found with id " + id));
 
-        Company company = companyRepository.findById(phoneDto.getCompanyId())
-                .orElseThrow(() -> new RuntimeException("Company not found with id " + phoneDto.getCompanyId()));
+        Company company = companyRepository.findById(phoneDto.getCompany_id())
+                .orElseThrow(() -> new RuntimeException("Company not found with id " + phoneDto.getCompany_id()));
 
         phoneToUpdate.setCompany(company);
         phoneToUpdate.setModel(phoneDto.getModel());

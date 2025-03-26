@@ -3,6 +3,7 @@ package com.example.proiect.mappers.impl;
 import com.example.proiect.dto.OrderRequestDto;
 import com.example.proiect.dto.OrderResponseDto;
 import com.example.proiect.entities.Order;
+import com.example.proiect.entities.Phone;
 import com.example.proiect.mappers.OrderMapper;
 
 import java.util.List;

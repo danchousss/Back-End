@@ -3,6 +3,7 @@ package com.example.proiect.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,9 +23,10 @@ public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String model;
+    @NotNull
     private Long yearOfRelease;
+    @NotNull
     private Long price;
 
     @OneToMany(mappedBy = "phones", cascade = CascadeType.ALL, orphanRemoval = true )

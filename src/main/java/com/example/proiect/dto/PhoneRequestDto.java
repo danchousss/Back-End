@@ -10,12 +10,12 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 public class PhoneRequestDto {
-    @NotEmpty(message = "model must not be null")
+    @NotNull(message = "model must not be null")
     private String model;
-    @NotEmpty(message = "price must not be null")
+    @NotNull(message = "price must not be null")
     private Long price;
-    @NotEmpty(message = "yearOfRelease must not be null")
+    @NotNull(message = "yearOfRelease must not be null")
     private Long yearOfRelease;
     @NotNull(message = "Company ID must not be null")
-    private Long companyId;
+    private Long company_id;
 }
