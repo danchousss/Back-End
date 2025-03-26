@@ -12,18 +12,20 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Orders {
+@Table(name = "orders")
+public class Order {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Long price;
 //связь
     @ManyToOne
-    @JoinColumn(name = "phones_id",insertable=false, updatable=false)
-    private Phones phones;
+    @JoinColumn(name = "phone_id",referencedColumnName = "id")
+    private Phone phones;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id",insertable=false, updatable=false)
+    @JoinColumn(name = "customer_id",referencedColumnName = "id")
     private Customer customer;
 
 }
